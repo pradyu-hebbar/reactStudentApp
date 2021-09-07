@@ -41,15 +41,19 @@ function App() {
   };
   return (
     <div id='app'>
-      <input
-        type='text'
-        id='search'
-        placeholder='Search for students'
-        ref={text}
-        onChange={onChange}
-      />
+      <div className='search'>
+        <input
+          type='text'
+          id='search'
+          placeholder='Search for students'
+          ref={text}
+          onChange={onChange}
+        />
+        <i className='fas fa-search'></i>
+      </div>
+
       {filteredStudents.length === 0 ? (
-        <div className='err'>No Results Found</div>
+        <div className='err'>No Results Found!</div>
       ) : (
         <Students students={filteredStudents} />
       )}
